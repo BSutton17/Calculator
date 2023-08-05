@@ -6,17 +6,6 @@ body{
   align-items: center;
 }
 
-#wrapper{
-  position: relative;
-  bottom: 50px;
-}
-h1{
-  color: white;
-  position: relative;
-  margin-top:auto;
-  top:100px;
-}
-
 /* Putting buttons in their correct spot */
 #container{
   border-radius: 5px;
@@ -38,6 +27,7 @@ h1{
 }
 
 #display{
+  font-family: "Blanka", sans-serif;
   max-height: 30px;
   text-align: right;
   color:#f7dc0a;
@@ -48,6 +38,7 @@ h1{
 }
 
 #secondary-display, #fake-display{
+  font-family: "Blanka", sans-serif;
   font-size: 25px;
   height: 60px;
   margin-bottom: -70px;

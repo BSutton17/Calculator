@@ -1,72 +1,156 @@
-body{
-  margin: 0;
+:root {
+  --white: white;
+  --light-gray: #f0f0f0;
+  --dark-gray: #6c6c6c;
+  --black: #1e1e1e;
+  --yellow: #f99c14;
+}
+
+.container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  
 }
 
-#drum-machine{
-  width: 550px; 
-  min-height: 300px;
-  background-color: #0000cd;
-  border-radius: 8px;
-  border: 2px solid white;
-}
-
-#pads{
+#calculator {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0px;
-  grid-template-rows: 1fr 1fr 1fr;
-  width: min-content;
-
+  grid-template-areas:
+    "display display display display"
+    "clear negative percentage divide"
+    "seven eight nine multiply"
+    "four five six subtract"
+    "one two three add"
+    "zero zero decimal equals";
+  grid-template-columns: 100px 100px 100px 100px;
+  gap: 20px;
+  padding: 50px;
+  padding-top: 10px;
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: var(--black);
 }
 
-#display{
-  position: relative;
-  width: 120px;
-  min-height: 35px; 
-  font-size: 22px;
-  bottom: 85px;
-  left: 73%;
-  text-align: center;
-  background-color: #002cff;
-  border: 3px solid black;
+.light-gray {
+  background-color: var(--light-gray);
 }
 
-.drum-pad{
-  min-width: 116px;
-  width: 115px;
-  height: 80px;
-  font-size: 19px;
-  font-weight: bold;
-  position: relative;
-  left: 15%;
-  top: 70%;
-  background-color: #002cff;
+.dark-gray {
+  background-color: var(--dark-gray);
   color: white;
-  border: 2px solid black;
 }
 
-button:hover{
+.yellow {
+  background-color: var(--yellow);
+  color: white;
+}
+
+button {
+  height: 100px;
+  font-size: 24px;
+  border: none;
   cursor: pointer;
-  background-color: #0000cd;
+  border-radius: 100px;
+  width: 100%;
+  transition: transform 0.1s ease-in-out;
 }
 
-button:active{
-  background-color: #0000ad;
+button:active {
+  transform: scale(0.95);
 }
 
-footer{
-  margin-top: 30px;
-  text-align: left;
+#answer {
+  font-size: 48px;
+  height: 48px;
 }
 
-#volume-control{
-  width: 30%;
-  position: relative;
-  bottom: 220px;
-  left: 73%;
+#expression {
+  font-size: 30px;
+  height: 30px;
+  color: var(--dark-gray);
+}
+
+#display {
+  grid-area: display;
+}
+
+#divide {
+  grid-area: divide;
+}
+
+#clear {
+  grid-area: clear;
+}
+
+#negative {
+  grid-area: negative;
+}
+
+#percentage {
+  grid-area: percentage;
+}
+
+#divide {
+  grid-area: divide;
+}
+
+#seven {
+  grid-area: seven;
+}
+
+#eight {
+  grid-area: eight;
+}
+
+#nine {
+  grid-area: nine;
+}
+
+#multiply {
+  grid-area: multiply;
+}
+
+#four {
+  grid-area: four;
+}
+
+#five {
+  grid-area: five;
+}
+
+#six {
+  grid-area: six;
+}
+
+#subtract {
+  grid-area: subtract;
+}
+
+#one {
+  grid-area: one;
+}
+
+#two {
+  grid-area: two;
+}
+
+#three {
+  grid-area: three;
+}
+
+#add {
+  grid-area: add;
+}
+
+#zero {
+  grid-area: zero;
+}
+
+#decimal {
+  grid-area: decimal;
+}
+
+#equals {
+  grid-area: equals;
 }

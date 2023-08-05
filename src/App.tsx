@@ -129,7 +129,6 @@ function App() {
 
   return (
     <div id="wrapper">
-    <h1>Calculator</h1>
       <div id="container"> 
         <div id="display">{answer}</div>
         {showFakeDisplay && <div id="fake-display">{answer}</div>}

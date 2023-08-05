@@ -118,12 +118,19 @@ function App() {
       newAnswer = eval(newDisplay);
     }
 
-    // Check the type of the original operands and round the answer accordingly
-    const originalOperand = parseFloat(display);
-    if (isFinite(originalOperand) && originalOperand % 1 !== 0) {
-      const decimalPlaces = originalOperand.toString().split(".")[1].length;
-      newAnswer = newAnswer.toFixed(decimalPlaces);
+    // Find the longest decimal among the operands
+  const operands = newDisplay.split(/[-+*/]/).map(parseFloat);
+  const maxDecimalPlaces = Math.max(...operands.map((operand) => {
+    if (!isNaN(operand) && operand % 1 !== 0) {
+      return operand.toString().split(".")[1].length;
     }
+    return 0;
+  }));
+
+  // Round the answer to the same length as the longest decimal
+  if (maxDecimalPlaces > 0) {
+    newAnswer = newAnswer.toFixed(maxDecimalPlaces);
+  }
 
     // Set the new answer in the state variable and clear the display
     setAnswer(newAnswer.toString());

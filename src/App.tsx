@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import './App.css'
 
-// Main component function called App
 function App() {
 
   // Using the 'useState' hook to create three state variables: 'answer', 'display', and 'showFakeDisplay'
@@ -102,6 +101,14 @@ function App() {
       }
     }
     const newDisplay = newParts.join(" ");
+
+    // Check for division by zero
+  if (newDisplay.includes("/ 0")) {
+    setAnswer("Why would you divide by zero ._.");
+    setDisplay("");
+    setShowFakeDisplay(true);
+    return;
+  }
 
     let newAnswer;
     // Evaluate the newDisplay to get the new answer

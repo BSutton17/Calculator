@@ -125,6 +125,8 @@ body{
 
 /* Regular css continues */
 button{
+  min-width: 1rem;
+  min-height: 1rem;
   font-weight: bold;
   font-size: 16px;
   color: white;
@@ -144,3 +146,4 @@ button:active{
 footer{
   margin-top: 40px;
 }
+

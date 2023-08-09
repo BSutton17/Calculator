@@ -16,4 +16,11 @@
   #display{
     margin-top: 5px;;
   }
+  button{
+  width: 6.25rem;
+  height: 6.25rem;
+  }
+  #zero{
+    width: 12.5rem;
+  }
 }
